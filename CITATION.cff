@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: >-
+  Cold Start Cost of Serialization Formats in Gradient Boosted Tree
+  Deployment: replication package
+message: If you use this software, please cite both the software and the paper.
+type: software
+authors:
+  - given-names: FIRSTNAME
+    family-names: LASTNAME
+    orcid: https://orcid.org/0000-0000-0000-0000
+    affiliation: AFFILIATION
+version: 1.0.0
+date-released: 2026-01-01
+license: MIT
+repository-code: https://github.com/USERNAME/REPOSITORY
+keywords:
+  - gradient boosted decision trees
+  - model deployment
+  - serialization
+  - cold start latency
+  - ONNX Runtime
+  - empirical software engineering

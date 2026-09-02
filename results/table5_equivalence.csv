@@ -1,0 +1,4 @@
+comparison,mean_diff_ms,std_error,p_margin_5pct,p_margin_50ms
+pickle vs joblib,18.6,35.3,0.0331,0.1908
+pickle vs native,18.1,30.7,0.018,0.1548
+joblib vs native,-0.5,15.6,0.0,0.0021

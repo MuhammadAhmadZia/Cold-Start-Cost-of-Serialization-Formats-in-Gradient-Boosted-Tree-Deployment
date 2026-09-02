@@ -1,0 +1,15 @@
+# Versions used for the measurements reported in the paper.
+# See results/versions.json for the full recorded environment.
+lightgbm==4.6.0
+xgboost==3.4.1
+catboost==1.2.10
+onnxruntime==1.29.0
+onnxmltools==1.16.0
+onnxconverter-common
+scikit-learn==1.6.1
+numpy==2.1.3
+pandas
+scipy
+statsmodels
+matplotlib
+joblib

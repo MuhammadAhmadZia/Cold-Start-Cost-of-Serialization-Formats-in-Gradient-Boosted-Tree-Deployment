@@ -1,0 +1,41 @@
+measurements: 1440   cells: 288
+interpreter floor: 43.8 ms   numpy import: 75.8 ms
+
+TABLE 3  Composition of time to first prediction at batch 1 (ms)
+            import  load  first_pred    ttfp  import_pct
+lib fmt                                                 
+cat joblib  1611.3   1.9         4.1  1747.9        92.7
+    native  1633.4   3.4         3.9  1758.9        92.7
+    onnx      53.1  70.0         0.8   253.8        18.5
+    pickle  1626.8   2.1         4.2  1756.5        92.8
+lgb joblib  1965.9  12.5         4.3  2156.5        93.5
+    native  1962.6  28.7         0.5  2166.1        92.9
+    onnx      41.3  25.4         0.6   200.7        21.9
+    pickle  1980.3  12.1         4.4  2190.6        93.2
+xgb joblib  1079.3  21.0         2.2  1267.2        88.5
+    native  1102.4  22.2         2.7  1297.3        88.4
+    onnx      44.8  30.4         0.6   192.9        22.6
+    pickle  1084.4  21.7         2.2  1258.5        88.1
+
+import share for in-library formats: 88.1% to 93.5%
+median load share: 0.5%
+ONNX speedup vs native on TTFP: 7.35x
+
+TABLE 4  Share of variance in TTFP explained by each factor alone
+            library  log_size  format  library_and_size
+subset                                                 
+in-library    0.652     0.001     0.0             0.653
+onnx          0.070     0.650     NaN             0.704
+  in-library  load time on size: R2=0.781, 11.9 ms/MB, load is 0.5% of TTFP
+  onnx        load time on size: R2=0.877, 31.0 ms/MB, load is 20.3% of TTFP
+  artifact size spans 0.035 to 11.32 MB (326x)
+  TTFP for in-library formats spans 2.31x
+
+TABLE 5  Paired equivalence tests among the in-library formats
+equivalence margin: 5% of mean TTFP = 87 ms over 24 paired configurations
+      comparison  mean_diff_ms  std_error  p_margin_5pct  p_margin_50ms
+pickle vs joblib          18.6       35.3         0.0331         0.1908
+pickle vs native          18.1       30.7         0.0180         0.1548
+joblib vs native          -0.5       15.6         0.0000         0.0021
+
+PREDICTION AGREEMENT  24/24 configurations agree; largest absolute difference 1.59e-05
