@@ -1,0 +1,41 @@
+{
+  "env_label": "A",
+  "note": "Hosted CPU runtime. Hardware details were not captured at measurement time and the runtime instance is no longer available, so the processor, core count and memory are reported as unknown.",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "kernel": "6.6.122+",
+  "python": "3.13.15",
+  "python_implementation": "CPython",
+  "cpu": {
+    "model": null,
+    "vendor": null,
+    "logical_cores": null,
+    "physical_cores": null,
+    "affinity_cores": null,
+    "avx512": null
+  },
+  "memory": {
+    "total_gb": null,
+    "cgroup_limit_gb": null
+  },
+  "storage": {
+    "filesystem": null
+  },
+  "packages": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "lightgbm": "4.6.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "onnxruntime": "1.29.0",
+    "sklearn": "1.6.1",
+    "numpy": "2.1.3"
+  },
+  "eviction": {
+    "euid": null,
+    "posix_fadvise": null,
+    "drop_caches_present": null,
+    "drop_caches_writable": null
+  }
+}

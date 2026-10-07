@@ -1,0 +1,52 @@
+==================================================================
+PART A  CROSS-ENVIRONMENT REPLICATION
+==================================================================
+environments: A, B
+   A             1440 measurements
+   B             1440 measurements
+
+   A            None, None cores, None GB, Python 3.13.15
+   B            Intel(R) Xeon(R) CPU @ 2.20GHz, 2 cores, 12.67 GB, Python 3.13.15
+
+Import share of time to first prediction, in-library formats (%)
+lib   cat   lgb   xgb
+env                  
+A    92.7  93.4  88.3
+B    93.4  94.0  89.4
+
+Median time to first prediction by format and environment (ms)
+fmt  joblib  native   onnx  pickle
+env                               
+A    1761.0  1759.0  239.0  1777.0
+B    1877.0  1923.0  238.0  1917.0
+
+ONNX speedup on time to first prediction
+   A            7.35x
+   B            8.09x
+
+wrote figures/fig7_environments.png
+
+
+==================================================================
+PART B  COLD PAGE CACHE
+==================================================================
+environments: B
+eviction levels: warm, artifact, libs   720 measurements
+
+Median total process wall time by eviction level (ms)
+fmt           native   onnx
+env eviction               
+B   warm      2909.8  334.2
+    artifact  2791.6  317.9
+    libs      2812.2  353.9
+
+Cost of a cold cache, relative to the warm-cache control arm
+   B          artifact  native 0.96x, onnx 0.95x
+   B          libs      native 0.97x, onnx 1.06x
+
+ONNX speedup over native, by eviction level
+   B          warm      8.71x
+   B          artifact  8.78x
+   B          libs      7.95x
+
+wrote figures/fig8_coldcache.png

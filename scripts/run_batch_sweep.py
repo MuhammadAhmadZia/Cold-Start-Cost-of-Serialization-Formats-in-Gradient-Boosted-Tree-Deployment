@@ -28,7 +28,7 @@ ROOT = os.path.dirname(HERE)
 RES = os.path.join(ROOT, "results")
 DATA = os.path.join(ROOT, "data")
 PROBE = os.path.join(HERE, "probe.py")
-RAW = os.path.join(RES, "raw_batchsweep.jsonl")
+# RAW is resolved inside main(), since it depends on --env.
 
 BATCHES = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
 FORMATS = ["native", "onnx"]
@@ -41,8 +41,16 @@ def main():
     ap.add_argument("--reps", type=int, default=100,
                     help="steady-state predictions inside each process")
     ap.add_argument("--threads", type=int, default=1)
+    ap.add_argument("--env", default=None,
+                    help="platform label; results go to results/env_<label>/ "
+                         "so runs on different machines never overwrite "
+                         "each other")
     ap.add_argument("--timeout", type=int, default=600)
     args = ap.parse_args()
+
+    out_dir = os.path.join(RES, f"env_{args.env}") if args.env else RES
+    os.makedirs(out_dir, exist_ok=True)
+    RAW = os.path.join(out_dir, "raw_batchsweep.jsonl")
 
     man = pd.read_csv(os.path.join(RES, "manifest.csv"))
     man = man[man.status == "ok"]
@@ -102,7 +110,8 @@ def main():
             rec = json.loads(p.stdout.strip().splitlines()[-1])
             rec.update(dataset=row.dataset, lib=row.lib, fmt=row.fmt,
                        n_trees=int(row.n_trees), bytes=int(row.bytes),
-                       repeat=k, experiment="batch_sweep")
+                       repeat=k, experiment="batch_sweep",
+                       env_label=args.env or "default")
             out.write(json.dumps(rec) + "\n")
             out.flush()
 

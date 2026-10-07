@@ -30,9 +30,10 @@ from sklearn.model_selection import train_test_split
 warnings.filterwarnings("ignore")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ART = os.path.join(HERE, "artifacts")
-DATA = os.path.join(HERE, "data")
-RES = os.path.join(HERE, "results")
+ROOT = os.path.dirname(HERE)
+ART = os.path.join(ROOT, "artifacts")
+DATA = os.path.join(ROOT, "data")
+RES = os.path.join(ROOT, "results")
 for d in (ART, DATA, RES):
     os.makedirs(d, exist_ok=True)
 

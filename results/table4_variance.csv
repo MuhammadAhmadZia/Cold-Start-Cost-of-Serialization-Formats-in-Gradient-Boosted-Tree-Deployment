@@ -1,3 +1,5 @@
-subset,library,log_size,format,library_and_size
-in-library,0.6524,0.0006,0.0001,0.653
-onnx,0.0701,0.6502,,0.7039
+predictor,In-library,ONNX
+Library,0.652,0.07
+Log artifact size,0.001,0.65
+Serialization format,0.0,
+Library and log size together,0.653,0.704

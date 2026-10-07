@@ -62,10 +62,16 @@ def main():
     ap.add_argument("--repeats", type=int, default=5)
     ap.add_argument("--reps", type=int, default=100)
     ap.add_argument("--threads", type=int, default=1)
+    ap.add_argument("--env", default=None,
+                    help="platform label; results go to results/env_<label>/ "
+                         "so runs on different machines never overwrite "
+                         "each other")
     ap.add_argument("--timeout", type=int, default=300)
     args = ap.parse_args()
 
-    raw = os.path.join(RES, "raw_smoketest.jsonl" if args.quick
+    out_dir = os.path.join(RES, f"env_{args.env}") if args.env else RES
+    os.makedirs(out_dir, exist_ok=True)
+    raw = os.path.join(out_dir, "raw_smoketest.jsonl" if args.quick
                        else "raw_main.jsonl")
     batches = [1, 32] if args.quick else [1, 32, 1024]
     repeats = 2 if args.quick else args.repeats
@@ -113,7 +119,8 @@ def main():
                        n_trees=int(row.n_trees), bytes=int(row.bytes),
                        repeat=k, t_process_wall_s=wall,
                        interpreter_floor_s=floor,
-                       experiment="smoketest" if args.quick else "main")
+                       experiment="smoketest" if args.quick else "main",
+                       env_label=args.env or "default")
             out.write(json.dumps(rec) + "\n")
             out.flush()
 

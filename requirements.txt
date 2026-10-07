@@ -3,6 +3,9 @@
 lightgbm==4.6.0
 xgboost==3.4.1
 catboost==1.2.10
+# ONNX Runtime 1.29.0 was used on machine A and 1.30.0 on machine B. Either
+# reproduces the import decomposition. Pin one when comparing crossover
+# batch sizes, which are sensitive to the runtime version.
 onnxruntime==1.29.0
 onnxmltools==1.16.0
 onnxconverter-common

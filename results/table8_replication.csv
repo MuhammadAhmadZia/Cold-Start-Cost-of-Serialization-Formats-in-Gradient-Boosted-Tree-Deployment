@@ -1,0 +1,9 @@
+measure,Environment A,Environment B
+"Import share, LightGBM",93.4,94.0
+"Import share, XGBoost",88.3,89.4
+"Import share, CatBoost",92.7,93.4
+"Median TTFP, pickle (ms)",1777.0,1917.0
+"Median TTFP, joblib (ms)",1761.0,1877.0
+"Median TTFP, native (ms)",1759.0,1923.0
+"Median TTFP, ONNX (ms)",239.0,238.0
+ONNX advantage at batch one,7.35,8.09

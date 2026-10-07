@@ -1,11 +1,25 @@
 {
-  "python": "3.13.15",
-  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
-  "machine": "x86_64",
-  "lightgbm": "4.6.0",
-  "xgboost": "3.4.1",
-  "catboost": "1.2.10",
-  "onnxruntime": "1.29.0",
-  "sklearn": "1.6.1",
-  "numpy": "2.1.3"
+  "note": "Package versions are recorded per environment in results/env_A/environment.json and results/env_B/environment.json.",
+  "env_A": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "lightgbm": "4.6.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "onnxruntime": "1.29.0",
+    "sklearn": "1.6.1",
+    "numpy": "2.1.3"
+  },
+  "env_B": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "lightgbm": "4.6.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "onnxruntime": "1.30.0",
+    "sklearn": "1.6.1",
+    "numpy": "2.1.3"
+  }
 }

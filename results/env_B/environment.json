@@ -1,0 +1,41 @@
+{
+  "env_label": "B",
+  "note": "Colab CPU runtime, free tier",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "kernel": "6.6.122+",
+  "python": "3.13.15",
+  "python_implementation": "CPython",
+  "cpu": {
+    "model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+    "vendor": "GenuineIntel",
+    "logical_cores": 2,
+    "physical_cores": 1,
+    "affinity_cores": 2,
+    "avx512": false
+  },
+  "memory": {
+    "total_gb": 12.67,
+    "cgroup_limit_gb": null
+  },
+  "storage": {
+    "filesystem": null
+  },
+  "packages": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "lightgbm": "4.6.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "onnxruntime": "1.30.0",
+    "sklearn": "1.6.1",
+    "numpy": "2.1.3"
+  },
+  "eviction": {
+    "euid": 0,
+    "posix_fadvise": true,
+    "drop_caches_present": true,
+    "drop_caches_writable": false
+  }
+}

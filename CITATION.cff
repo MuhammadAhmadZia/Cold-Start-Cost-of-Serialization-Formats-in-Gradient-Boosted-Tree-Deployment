@@ -2,26 +2,21 @@ cff-version: 1.2.0
 title: >-
   Measuring Cold Start Cost of Serialization Formats in Gradient Boosted Tree
   Deployment: replication package
-message: >-
-  If you use this software, please cite both the software and the accompanying
-  paper.
+message: If you use this software, please cite both the software and the paper.
 type: software
 authors:
   - given-names: Marwan
     family-names: Abu-Zanona
-    email: mabozanoneh@kfu.edu.sa
     affiliation: >-
       Department of Management Information Systems, College of Business
       Administration, King Faisal University, Al-Ahsa, Saudi Arabia
   - given-names: Maryam
-    family-names: Al-Dairi
-    email: maldairi@kfu.edu.sa
+    family-names: Aldairi
     affiliation: >-
       Department of Management Information Systems, College of Business
       Administration, King Faisal University, Al-Ahsa, Saudi Arabia
   - given-names: Najla Abdulaziz
     family-names: Almousa
-    email: nalmousa@kfu.edu.sa
     affiliation: >-
       Department of Management Information Systems, College of Business
       Administration, King Faisal University, Al-Ahsa, Saudi Arabia
@@ -32,13 +27,11 @@ authors:
       Administration, King Faisal University, Al-Ahsa, Saudi Arabia
   - given-names: Abdulmalik
     family-names: AlJabr
-    email: aaaljabr@kfu.edu.sa
-    affiliation: >-
-      Applied College, King Faisal University, Al-Ahsa, Saudi Arabia
+    affiliation: Applied College, King Faisal University, Al-Ahsa, Saudi Arabia
   - given-names: Muhammad Ahmad
     family-names: Zia
-    email: muhammad.zia@cs.uol.edu.pk
     orcid: https://orcid.org/0000-0002-3208-6246
+    email: muhammad.zia@cs.uol.edu.pk
     affiliation: >-
       Department of Computer Science and Information Technology, The University
       of Lahore, Lahore, Pakistan
@@ -48,21 +41,15 @@ authors:
     affiliation: >-
       Department of Computer Science and Information Technology, The University
       of Lahore, Lahore, Pakistan
-version: 1.0.0
-# ACTION REQUIRED: set the release date and the repository URL before tagging.
-date-released: 2026-01-01
+version: 2.0.0
+date-released: 2026-10-07
 license: MIT
+doi: 10.5281/zenodo.22334598
 repository-code: https://github.com/USERNAME/REPOSITORY
-abstract: >-
-  Measurement harness, raw measurement records and analysis code for a study of
-  cold start cost across four serialization formats and three gradient boosting
-  libraries. Contains 2,520 measurements, each taken in an isolated operating
-  system process.
 keywords:
-  - artificial intelligence
   - gradient boosted decision trees
   - model deployment
-  - serialization formats
+  - serialization
   - cold start latency
   - ONNX Runtime
   - empirical software engineering
